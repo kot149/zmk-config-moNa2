@@ -1,0 +1,4 @@
+name: moNa2
+build:
+  settings:
+    board_root: config
