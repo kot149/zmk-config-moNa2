@@ -6,3 +6,8 @@ url: https://github.com/kumamuk-git/zmk-config-moNa2
 requires: [seeeduino_xiao_ble]
 features:
   - keys
+  - pointer
+  - encoder
+siblings:
+  - moNa2_L
+  - moNa2_R
