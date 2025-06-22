@@ -1,8 +1,9 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1000
 // #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
 
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors/rgbled_widget.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -44,9 +45,58 @@
 
 &sl { release-after-ms = <1000>; };
 
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+    excluded-positions = <
+        18 // J
+        19 // K
+        // 20 // L
+        21 // ;
+        22 // Z
+        // 31 // .
+        // 32 // ,
+        // 33 // /
+        34 // Ctrl
+    >;
+};
+
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
+&trackball_listener {
+    compatible = "zmk,input-listener";
+
+    scroller {
+        layers = <EXTRA_FINCTIONS MEDIA>;
+        input-processors =
+            <&zip_xy_scaler 2 3>,
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&zip_xy_to_scroll_mapper>;
+    };
+
+    auto-mouse-layer {
+        layers = <DEFAULT MOUSE>;
+        input-processors = <&zip_temp_layer MOUSE 10000>;
+        process-next;
+    };
+
+    disable-scroll-x {
+        layers = <MEDIA>;
+        input-processors = <&wheel_x_scaler 0 1>;
+        process-next;
+    };
+};
+
 / {
+    input_processors {
+        wheel_x_scaler: wheel_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
