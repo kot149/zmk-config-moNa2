@@ -3,10 +3,10 @@
 
 / {
     chosen {
-        zmk,physical-layout = &moNa2_physical_layout;
+        zmk,physical-layout = &mona2_physical_layout;
     };
 
-    moNa2_physical_layout: moNa2_physical_layout {
+    mona2_physical_layout: mona2_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
         transform = <&default_transform>;
@@ -115,5 +115,14 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
+    };
+};
+
+&spi0 {
+    status = "disabled";
+
+    trackball: trackball@0 {
+        status = "disabled";
+        reg = <0>;
     };
 };
