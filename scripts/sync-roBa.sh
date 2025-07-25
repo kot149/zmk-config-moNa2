@@ -173,10 +173,10 @@ copy_and_replace_content() {
     else
         # テキストファイルは内容を置換してコピー（大文字小文字のパターンを考慮）
         sed -e "s|roBa|moNa2|g" -e "s|ROBA|MONA2|g" -e "s|roba|mona2|g" "$source_path" > "$target_path"
-        
+
         # moNa2_R.confの場合、PMW3610設定を変更
         if [[ "$target_path" == *"moNa2_R.conf" ]]; then
-            sed -i "s|CONFIG_PMW3610_INVERT_Y=y|CONFIG_PMW3610_INVERT_X=y\nCONFIG_PMW3610_INVERT_Y=n|g" "$target_path"
+            sed -i "s|CONFIG_PMW3610_ORIENTATION_180=y|CONFIG_PMW3610_ORIENTATION_180=n|g" "$target_path"
         fi
     fi
 }
