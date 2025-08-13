@@ -175,9 +175,9 @@ copy_and_replace_content() {
         sed -e "s|roBa|moNa2|g" -e "s|ROBA|MONA2|g" -e "s|roba|mona2|g" "$source_path" > "$target_path"
 
         # moNa2_R.confの場合、PMW3610設定を変更
-        if [[ "$target_path" == *"moNa2_R.conf" ]]; then
-            sed -i "s|CONFIG_PMW3610_ORIENTATION_180=y|CONFIG_PMW3610_ORIENTATION_180=n|g" "$target_path"
-        fi
+        # if [[ "$target_path" == *"moNa2_R.conf" ]]; then
+        #     sed -i "s|CONFIG_PMW3610_ORIENTATION_180=y|CONFIG_PMW3610_ORIENTATION_180=n|g" "$target_path"
+        # fi
     fi
 }
 
