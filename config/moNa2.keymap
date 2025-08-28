@@ -122,9 +122,20 @@
     // };
 };
 
+/ {
+
+    /omit-if-no-ref/ zip_report_rate_limit_2: zip_report_rate_limit_2 {
+        compatible = "zmk,input-processor-report-rate-limit";
+        #input-processor-cells = <1>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+    };
+};
+
 &trackball_listener {
     compatible = "zmk,input-listener";
     input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
         &zip_mouse_gesture
         &zip_report_rate_limit 15
     >;
@@ -138,9 +149,9 @@
     scroller {
         layers = <FUNCTIONS_AND_SYMBOLS MISC EXTRA_FINCTIONS MEDIA>;
         input-processors =
-            <&zip_report_rate_limit 15>,
+            <&zip_report_rate_limit_2 15>,
             <&zip_xy_scaler 3 1>,
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_to_scroll_mapper>;
 
         process-next;
