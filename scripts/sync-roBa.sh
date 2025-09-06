@@ -7,8 +7,8 @@ SOURCE_DIR="$(dirname "$TARGET_DIR")/zmk-config-roBa"  # zmk-config-moNa2 の親
 SOURCE_PATTERN="roBa"
 TARGET_PATTERN="moNa2"
 DRY_RUN=false
-EXCLUDE_DIRS=(".git" ".vscode" "build" "docs")
-EXCLUDE_FILES=("sync-roBa.sh" "README.md")
+EXCLUDE_DIRS=(".git" ".vscode" "build" "docs" "keymap-drawer")
+EXCLUDE_FILES=(".git" "README.md" "sync-roBa.sh" "roBa.svg" )
 
 # ヘルプ表示関数
 show_help() {
@@ -75,7 +75,7 @@ TARGET_DIR=$(realpath "$TARGET_DIR")
 # ターゲットディレクトリの処理
 if [[ -d "$TARGET_DIR" ]]; then
     if [ "$DRY_RUN" = true ]; then
-        echo -e "\033[33m[PREVIEW] Target directory exists, would clear contents (preserving .git & README.md)\033[0m"
+        echo -e "\033[33m[PREVIEW] Target directory exists, would clear contents (preserving EXCLUDE_DIRS/EXCLUDE_FILES)\033[0m"
     else
         echo -n "Target directory exists. Overwrite? (Y/N): "
         read -r confirmation
@@ -84,12 +84,36 @@ if [[ -d "$TARGET_DIR" ]]; then
             exit 0
         fi
 
-        echo -e "\033[90mClearing target directory contents...\033[0m"
-        find "$TARGET_DIR" -mindepth 1 -maxdepth 1 ! -name ".git" ! -name "README.md" ! -name "scripts" -exec rm -rf {} + 2>/dev/null
-        # scriptsディレクトリ内のsync-roBa.sh以外を削除
-        if [[ -d "$TARGET_DIR/scripts" ]]; then
-            find "$TARGET_DIR/scripts" -mindepth 1 ! -name "sync-roBa.sh" -exec rm -rf {} + 2>/dev/null
+        echo -e "\033[90mClearing target directory contents (preserving EXCLUDE_DIRS/EXCLUDE_FILES anywhere)...\033[0m"
+
+        # 1) ファイルの削除: 除外ディレクトリはpruneし、EXCLUDE_FILESに一致するファイル名は削除しない
+        PRUNE_DIRS=()
+        if (( ${#EXCLUDE_DIRS[@]} > 0 )); then
+            PRUNE_DIRS+=( "(" -type d )
+            for i in "${!EXCLUDE_DIRS[@]}"; do
+                name="${EXCLUDE_DIRS[$i]}"
+                if (( i == 0 )); then
+                    PRUNE_DIRS+=( -name "$name" )
+                else
+                    PRUNE_DIRS+=( -o -name "$name" )
+                fi
+            done
+            PRUNE_DIRS+=( -prune ")" -o )
         fi
+
+        EX_FILE_COND=()
+        for fname in "${EXCLUDE_FILES[@]}"; do
+            EX_FILE_COND+=( ! -name "$fname" )
+        done
+
+        # ファイルのみ対象にして安全に削除
+        find "$TARGET_DIR" -mindepth 1 "${PRUNE_DIRS[@]}" -type f "${EX_FILE_COND[@]}" -print0 \
+            | xargs -0r rm -f -- 2>/dev/null
+
+        # 2) 空ディレクトリの削除: 除外ディレクトリはpruneし、空になったディレクトリのみ削除
+        find "$TARGET_DIR" -depth -mindepth 1 "${PRUNE_DIRS[@]}" -type d -empty -print0 \
+            | xargs -0r rmdir -- 2>/dev/null
+
         echo -e "\033[32mTarget directory cleared\033[0m"
     fi
 else
