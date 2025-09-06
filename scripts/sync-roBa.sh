@@ -7,8 +7,8 @@ SOURCE_DIR="$(dirname "$TARGET_DIR")/zmk-config-roBa"  # zmk-config-moNa2 の親
 SOURCE_PATTERN="roBa"
 TARGET_PATTERN="moNa2"
 DRY_RUN=false
-EXCLUDE_DIRS=(".git" ".vscode" "build" "docs")
-EXCLUDE_FILES=("sync-roBa.sh" "README.md")
+EXCLUDE_DIRS=(".git" ".vscode" "build" "docs" "scripts" "keymap-drawer")
+EXCLUDE_FILES=("README.md" "sync-roBa.sh" "roBa.svg")
 
 # ヘルプ表示関数
 show_help() {
@@ -75,7 +75,7 @@ TARGET_DIR=$(realpath "$TARGET_DIR")
 # ターゲットディレクトリの処理
 if [[ -d "$TARGET_DIR" ]]; then
     if [ "$DRY_RUN" = true ]; then
-        echo -e "\033[33m[PREVIEW] Target directory exists, would clear contents (preserving .git & README.md)\033[0m"
+        echo -e "\033[33m[PREVIEW] Target directory exists, would clear contents (preserving EXCLUDE_DIRS/EXCLUDE_FILES)\033[0m"
     else
         echo -n "Target directory exists. Overwrite? (Y/N): "
         read -r confirmation
@@ -85,7 +85,13 @@ if [[ -d "$TARGET_DIR" ]]; then
         fi
 
         echo -e "\033[90mClearing target directory contents...\033[0m"
-        find "$TARGET_DIR" -mindepth 1 -maxdepth 1 ! -name ".git" ! -name "README.md" ! -name "scripts" -exec rm -rf {} + 2>/dev/null
+        # EXCLUDE_DIRS と EXCLUDE_FILES に含まれる名前は削除しない
+        EXCLUDES=("${EXCLUDE_DIRS[@]}" "${EXCLUDE_FILES[@]}")
+        FIND_ARGS=("$TARGET_DIR" -mindepth 1 -maxdepth 1)
+        for name in "${EXCLUDES[@]}"; do
+            FIND_ARGS+=( ! -name "$name" )
+        done
+        find "${FIND_ARGS[@]}" -exec rm -rf {} + 2>/dev/null
         # scriptsディレクトリ内のsync-roBa.sh以外を削除
         if [[ -d "$TARGET_DIR/scripts" ]]; then
             find "$TARGET_DIR/scripts" -mindepth 1 ! -name "sync-roBa.sh" -exec rm -rf {} + 2>/dev/null
