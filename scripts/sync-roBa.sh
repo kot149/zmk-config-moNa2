@@ -89,16 +89,16 @@ if [[ -d "$TARGET_DIR" ]]; then
         # 1) ファイルの削除: 除外ディレクトリはpruneし、EXCLUDE_FILESに一致するファイル名は削除しない
         PRUNE_DIRS=()
         if (( ${#EXCLUDE_DIRS[@]} > 0 )); then
-            PRUNE_DIRS+=( "(" -type d )
+            PRUNE_DIRS+=( "(" )
             for i in "${!EXCLUDE_DIRS[@]}"; do
                 name="${EXCLUDE_DIRS[$i]}"
                 if (( i == 0 )); then
-                    PRUNE_DIRS+=( -name "$name" )
+                    PRUNE_DIRS+=( -path "$TARGET_DIR/$name" )
                 else
-                    PRUNE_DIRS+=( -o -name "$name" )
+                    PRUNE_DIRS+=( -o -path "$TARGET_DIR/$name" )
                 fi
             done
-            PRUNE_DIRS+=( -prune ")" -o )
+            PRUNE_DIRS+=( ")" -prune -o )
         fi
 
         EX_FILE_COND=()
