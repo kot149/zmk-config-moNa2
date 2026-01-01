@@ -14,13 +14,11 @@ manifest:
       url-base: https://github.com/4mplelab
     - name: kot149
       url-base: https://github.com/kot149
-    - name: t-ogura
-      url-base: https://github.com/t-ogura
   projects:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: abb64ba316c29caddc49727ca2cac2f0ed5970c7
       import: app/west.yml
 
     # # https://github.com/inorichi/zmk-pmw3610-driver
@@ -32,7 +30,7 @@ manifest:
     # https://github.com/badjeff/zmk-pmw3610-driver
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: main
+      revision: zmk-0.3
       path: modules/zmk-pmw3610-driver-badjeff
 
     # https://github.com/badjeff/zmk-input-processor-report-rate-limit
@@ -76,12 +74,6 @@ manifest:
       remote: kot149
       revision: v1
       path: modules/zmk-scroll-snap
-
-    # https://github.com/t-ogura/prospector-zmk-module
-    - name: prospector-zmk-module
-      remote: t-ogura
-      revision: v1.1.1
-      path: modules/prospector-scanner-zmk-module
 
   self:
     path: config
