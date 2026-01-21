@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: inorichi
-      url-base: https://github.com/inorichi
     - name: caksoylar
       url-base: https://github.com/caksoylar
     - name: badjeff
@@ -20,7 +18,7 @@ manifest:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
-      revision: abb64ba316c29caddc49727ca2cac2f0ed5970c7
+      revision: main
       import: app/west.yml
 
     # https://github.com/sekigon-gonnoc/zmk-driver-paw3222
