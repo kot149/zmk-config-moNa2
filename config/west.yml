@@ -24,7 +24,7 @@ manifest:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
-      revision: abb64ba316c29caddc49727ca2cac2f0ed5970c7
+      revision: 4de313367288aad5aeaa1243890e40dc813f7008 # main (2026-11-15)
       import: app/west.yml
 
     # https://github.com/sekigon-gonnoc/zmk-driver-paw3222
@@ -36,7 +36,7 @@ manifest:
     # https://github.com/badjeff/zmk-input-processor-report-rate-limit
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
-      revision: f43f37aae7aaa7bf0ec4d432683b873a7e3a8efa # for v0.3-branch
+      revision: b056cb135525933743e2627150fb390f9d4b2461 # main (2026-11-15)
       path: modules/zmk-input-processor-report-rate-limit
 
     # https://github.com/ssbb/zmk-listeners
@@ -60,7 +60,7 @@ manifest:
     # https://github.com/caksoylar/zmk-rgbled-widget
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: 8756cb7b8114069fa3c25c6f6c990f24988fceff # v0.3-branch (2026-11-03)
+      revision: e6b467792a1dabef8cfa5c9fd26bfefc9c16662b # main (2026-11-15)
       path: modules/zmk-rgbled-widget
 
     # https://github.com/4mplelab/zmk-feature-charge-indicator.git
@@ -78,7 +78,7 @@ manifest:
     # https://github.com/kot149/zmk-layout-shift
     - name: zmk-layout-shift
       remote: kot149
-      revision: c242c13c9c5a6100b3980b8c725c734c368670de # v2 (2026-11-03)
+      revision: f9ea0302d2796b4dd2f8932cf8f2979bb2d8a558 # v2 (2026-11-15)
       path: modules/zmk-layout-shift
 
     # https://github.com/kot149/zmk-scroll-snap
