@@ -8,14 +8,20 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: Genteure
+      url-base: https://github.com/Genteure
     - name: ssbb
       url-base: https://github.com/ssbb
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
     - name: 4mplelab
       url-base: https://github.com/4mplelab
+    - name: 4mplelab
+      url-base: https://github.com/4mplelab
     - name: kot149
       url-base: https://github.com/kot149
+    - name: t-ogura
+      url-base: https://github.com/t-ogura
   projects:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
@@ -53,6 +59,12 @@ manifest:
       revision: main
       path: modules/zmk-feature-charge-indicator
 
+    # https://github.com/Genteure/zmk-bthome
+    - name: zmk-bthome
+      remote: Genteure
+      revision: main
+      path: modules/zmk-bthome
+
     # https://github.com/kot149/zmk-mouse-gesture
     - name: zmk-mouse-gesture
       remote: kot149
@@ -70,6 +82,12 @@ manifest:
       remote: kot149
       revision: v1
       path: modules/zmk-scroll-snap
+
+    # https://github.com/t-ogura/prospector-zmk-module
+    - name: prospector-zmk-module
+      remote: t-ogura
+      revision: v2.0.0
+      path: modules/prospector-scanner-zmk-module
 
   self:
     path: config
