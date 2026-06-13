@@ -2,14 +2,14 @@ name: "Draw Keymap"
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/draw.yml
-      - "config/moNa2_L.keymap"
-      - "config/moNa2_R.keymap"
-      - "config/moNa2.keymap"
-      - "keymap_drawer.config.yaml"
-      - "config/moNa2.dtsi"
+  # push:
+  #   paths:
+  #     - .github/workflows/draw.yml
+  #     - "config/moNa2_L.keymap"
+  #     - "config/moNa2_R.keymap"
+  #     - "config/moNa2.keymap"
+  #     - "keymap_drawer.config.yaml"
+  #     - "config/moNa2.dtsi"
 
 jobs:
   draw:
