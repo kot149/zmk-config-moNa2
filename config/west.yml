@@ -18,6 +18,8 @@ manifest:
       url-base: https://github.com/4mplelab
     - name: kot149
       url-base: https://github.com/kot149
+    - name: te9no
+      url-base: https://github.com/te9no
   projects:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
@@ -40,49 +42,56 @@ manifest:
     # https://github.com/ssbb/zmk-listeners
     - name: zmk-listeners
       remote: ssbb
-      revision: v1
+      revision: c240ceaf353d3138bea7695eef17049b7ade995b # v1 (2026-11-03)
       path: modules/zmk-listeners
 
     # https://github.com/caksoylar/zmk-smart-toggle.git
     - name: zmk-smart-toggle
       remote: caksoylar
-      revision: v0.3-branch
+      revision: 46e178221cccef965a511b772d7bc62800f1542e # v0.3-branch (2026-11-03)
       path: modules/zmk-smart-toggle
 
     # https://github.com/urob/zmk-adaptive-key
     - name: zmk-adaptive-key
       remote: urob
-      revision: v0.3
+      revision: 01ccc22889714f276c930dc960a989f80c9e0680 # v0.3
+      path: modules/zmk-adaptive-key
 
     # https://github.com/caksoylar/zmk-rgbled-widget
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: v0.3-branch
+      revision: 8756cb7b8114069fa3c25c6f6c990f24988fceff # v0.3-branch (2026-11-03)
       path: modules/zmk-rgbled-widget
 
     # https://github.com/4mplelab/zmk-feature-charge-indicator.git
     - name: zmk-feature-charge-indicator
       remote: 4mplelab
-      revision: main
+      revision: f0d311ed7804cda0e5837ef902f0419aeace4a88 # main (2026-11-03)
       path: modules/zmk-feature-charge-indicator
 
     # https://github.com/kot149/zmk-mouse-gesture
     - name: zmk-mouse-gesture
       remote: kot149
-      revision: v1
+      revision: 5d80b4489fe6f22d6677984d72d445b5190ef36f # v2 (2026-11-03)
       path: modules/zmk-mouse-gesture
 
     # https://github.com/kot149/zmk-layout-shift
     - name: zmk-layout-shift
       remote: kot149
-      revision: v2
+      revision: c242c13c9c5a6100b3980b8c725c734c368670de # v2 (2026-11-03)
       path: modules/zmk-layout-shift
 
     # https://github.com/kot149/zmk-scroll-snap
     - name: zmk-scroll-snap
       remote: kot149
-      revision: v1
+      revision: 2feeb988f5b5a3c2b5e09ba6472e86e6902463a2 # v1 (2026-11-03)
       path: modules/zmk-scroll-snap
+
+    # https://github.com/te9no/zmk-feature-blueboot
+    - name: zmk-feature-blueboot
+      remote: te9no
+      revision: f099518bce4d7d5a06e60ff9ad7e8d66954286ae # main (2026-11-03)
+      path: modules/zmk-feature-blueboot
 
   self:
     path: config
