@@ -30,7 +30,7 @@ manifest:
     # https://github.com/sekigon-gonnoc/zmk-driver-paw3222
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
-      revision: main
+      revision: df652881be2520bde4f64ab6ca35e4c5708f4f9b # main (2026-11-03)
       path: modules/zmk-driver-paw3222
 
     # https://github.com/badjeff/zmk-input-processor-report-rate-limit
