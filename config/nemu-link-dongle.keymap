@@ -1,0 +1,2 @@
+#define MONA2_NEMU_DONGLE
+#include "moNa2.keymap"

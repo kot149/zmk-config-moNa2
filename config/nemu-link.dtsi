@@ -1,0 +1,14 @@
+#ifndef MONA2_NEMU_LINK_DTSI
+#define MONA2_NEMU_LINK_DTSI
+
+/ {
+    nemu_link_radio: nemu_link_radio {
+        compatible = "sekigon,nemu-link-radio";
+    };
+
+    nemu_link_control: nemu_link_control {
+        compatible = "sekigon,nemu-link";
+    };
+};
+
+#endif

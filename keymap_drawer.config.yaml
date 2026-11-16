@@ -1,0 +1,20 @@
+draw_config:
+  shrink_wide_legends: 6
+parse_config:
+  raw_binding_map:
+    "&nl_mode 0": {t: BLE, s: Mode}
+    "&nl_mode 1": {t: 2.4GHz, s: Mode}
+    "&nl_mode 2": {t: BLE 2.4, s: Toggle}
+    "&out OUT_TOG": {t: USB/BLE, s: Output}
+    "&tog_ls_ctrl_cmd": Ctrl/Cmd
+    "&tog_ls_jis": US/JIS
+    "&ind_con": Link
+    "&ind_bat": Batt
+    "&reset_bootloader": {t: Reset/Boot, s: Central}
+    "&bt BT_SEL 0": BT 1
+    "&bt BT_SEL 1": BT 2
+    "&bt BT_SEL 2": BT 3
+    "&bt BT_SEL 3": BT 4
+    "&bt BT_SEL 4": BT 5
+    "&td_bt_clear": BT Clear
+    "&td_bt_clear_all": BT Clear All

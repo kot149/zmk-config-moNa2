@@ -8,6 +8,8 @@
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 #include <behaviors/blueboot.dtsi>
+#include <behaviors/nemu_link.dtsi>
+#include <dt-bindings/zmk/fixed_locality.h>
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -16,6 +18,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #include <layout_shift_kp_override.dtsi>
+
+/* Nemu-link Studio requires distinct identities for &kp and its &kpls alias. */
+&kpls { label = "LAYOUT_SHIFT_KEY_PRESS_ALIAS"; };
 
 / {
     behaviors {
@@ -121,9 +126,11 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
+#ifndef MONA2_NEMU_DONGLE
 &trackball {
     res-cpi = <800>;
 };
+#endif
 
 &zip_mouse_gesture {
     stroke-size = <150>;
@@ -779,9 +786,23 @@
             tapping-term-ms = <250>;
         };
 
+        bootloader_central: bootloader_central {
+            compatible = "zmk,behavior-fixed-locality";
+            #binding-cells = <0>;
+            locality = <FIXED_LOCALITY_CENTRAL>;
+            bindings = <&bootloader>;
+        };
+
+        reset_central: reset_central {
+            compatible = "zmk,behavior-fixed-locality";
+            #binding-cells = <0>;
+            locality = <FIXED_LOCALITY_CENTRAL>;
+            bindings = <&sys_reset>;
+        };
+
         /omit-if-no-ref/
 
-        hold_bootloader: hold_bootloader {
+        hold_bootloader_source: hold_bootloader_source {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&bootloader>, <&none>;
@@ -792,7 +813,7 @@
 
         /omit-if-no-ref/
 
-        reset_blueboot: reset_blueboot {
+        reset_or_blueboot_source: reset_or_blueboot_source {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&blueboot>, <&sys_reset>;
@@ -803,12 +824,50 @@
 
         /omit-if-no-ref/
 
-        reset_bootloader: reset_bootloader {
+        reset_bootloader_source: reset_bootloader_source {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&hold_bootloader 0 0>, <&reset_blueboot 0 0>;
+            bindings = <&hold_bootloader_source 0 0>, <&reset_or_blueboot_source 0 0>;
 
             tapping-term-ms = <300>;
+        };
+
+        /omit-if-no-ref/
+
+        hold_bootloader_central: hold_bootloader_central {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&bootloader_central>, <&none>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+        };
+
+        /omit-if-no-ref/
+
+        reset_or_bootloader_central: reset_or_bootloader_central {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&bootloader_central>, <&reset_central>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+        };
+
+        /omit-if-no-ref/
+
+        reset_bootloader_central: reset_bootloader_central {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&hold_bootloader_central 0 0>, <&reset_or_bootloader_central 0 0>;
+            tapping-term-ms = <300>;
+        };
+
+        /omit-if-no-ref/
+
+        reset_bootloader: reset_bootloader {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&reset_bootloader_source>, <&reset_bootloader_central>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         /omit-if-no-ref/
@@ -945,9 +1004,9 @@
             display-name = "Configuration";
 
             bindings = <
-&reset_bootloader        &none  &none  &tog_ls_ctrl_cmd  &tog_ls_jis                            &ind_con      &ind_bat      &none         &out OUT_TOG  &reset_bootloader      
-&none                  &none  &none  &none             &none        &trans      &td_bt_clear  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none                  &none  &none  &none             &none        &none       &none         &none         &none         &none         &none         &none
+&reset_bootloader  &none  &none  &tog_ls_ctrl_cmd  &tog_ls_jis                 &ind_con  &ind_bat  &none  &out OUT_TOG  &reset_bootloader
+&none  &none  &none  &none  &none  &trans       &td_bt_clear  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none  &none  &none        &none  &nl_mode 0  &nl_mode 1  &nl_mode 2  &none  &none
 &none                  &none  &none  &none             &none        &none       &none         &none                                                   &td_bt_clear_all
             >;
         };

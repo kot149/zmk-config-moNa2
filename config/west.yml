@@ -21,11 +21,17 @@ manifest:
     - name: te9no
       url-base: https://github.com/te9no
   projects:
-    # https://github.com/zmkfirmware/zmk
+    # https://github.com/sekigon-gonnoc/zmk/tree/v0.4+nemu-link
     - name: zmk
-      remote: zmkfirmware
-      revision: 4de313367288aad5aeaa1243890e40dc813f7008 # main (2026-11-15)
+      remote: sekigon-gonnoc
+      revision: c2db9b12bf20b8cb7e938fe414d3347ed55a21a1 # v0.4+nemu-link
       import: app/west.yml
+
+    - name: zmk-feature-nemu-link
+      remote: sekigon-gonnoc
+      revision: c9e735b170e77c34744113473d4889ffb96be8af # zmk-v0.4
+      path: modules/zmk-feature-nemu-link
+      import: config/west.yml
 
     # https://github.com/sekigon-gonnoc/zmk-driver-paw3222
     - name: zmk-driver-paw3222
@@ -69,10 +75,16 @@ manifest:
       revision: f0d311ed7804cda0e5837ef902f0419aeace4a88 # main (2026-11-03)
       path: modules/zmk-feature-charge-indicator
 
+    # https://github.com/kot149/zmk-feature-fixed-locality
+    - name: zmk-feature-fixed-locality
+      remote: kot149
+      revision: e35179e2b307ab4c77b99fd618e9e9278c19cdf8 # main
+      path: modules/zmk-feature-fixed-locality
+
     # https://github.com/kot149/zmk-mouse-gesture
     - name: zmk-mouse-gesture
       remote: kot149
-      revision: 5d80b4489fe6f22d6677984d72d445b5190ef36f # v2 (2026-11-03)
+      revision: 027bf5ecd413010a1f3cbd66ccc7ce28b3096b8f # v2-deferred-exec
       path: modules/zmk-mouse-gesture
 
     # https://github.com/kot149/zmk-layout-shift
@@ -84,7 +96,7 @@ manifest:
     # https://github.com/kot149/zmk-scroll-snap
     - name: zmk-scroll-snap
       remote: kot149
-      revision: 2feeb988f5b5a3c2b5e09ba6472e86e6902463a2 # v1 (2026-11-03)
+      revision: 6b2dccaab2d5b99ca8b79300b9a792fefb01c42d # v1 (2026-11-21)
       path: modules/zmk-scroll-snap
 
     # https://github.com/te9no/zmk-feature-blueboot

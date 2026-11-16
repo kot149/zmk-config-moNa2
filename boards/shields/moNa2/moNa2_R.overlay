@@ -15,6 +15,17 @@
 };
 
 / {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_input_split: trackball_input_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            device = <&trackball>;
+        };
+    };
+
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";

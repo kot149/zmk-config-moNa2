@@ -1,0 +1,470 @@
+layout: {zmk_keyboard: nemu-link-dongle}
+layers:
+  Default:
+  - {t: Q, h: LWIN}
+  - {t: W, h: LALT}
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - {t: P, h: Media}
+  - {t: A, h: LCTRL}
+  - S
+  - D
+  - F
+  - G
+  - LEFT SHIFT
+  - '&zoom_in'
+  - H
+  - J
+  - '&mouse_gesture_kp 0 K'
+  - L
+  - {t: '-', h: Extra Functions}
+  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
+  - {t: X, h: LEFT SHIFT}
+  - C
+  - V
+  - B
+  - Configuration
+  - {t: '&zoom_out', h: Configuration}
+  - N
+  - M
+  - {t: ',', s: '!'}
+  - {t: ., s: '?'}
+  - {t: /, h: LEFT SHIFT}
+  - LCTRL
+  - LEFT WIN
+  - LEFT ALT
+  - '&ime_switch'
+  - {t: SPACE, h: Functions & Symbols}
+  - {t: TAB, h: Navigations}
+  - {t: BACKSPACE, h: Navigations}
+  - {t: ENTER, h: Numpad & Arrows}
+  - {t: ESCAPE, h: Extra Functions}
+  Numpad & Arrows:
+  - +
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - '&td_alt_f4'
+  - Ctl+HOME
+  - {t: ▽, type: trans}
+  - Ctl+END
+  - '&alt_tab'
+  - {t: '*', h: LCTRL}
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - '='
+  - {t: ▽, type: trans}
+  - F5
+  - HOME
+  - UP ARROW
+  - END
+  - '&ctrl_tab'
+  - {t: '0', h: LEFT SHIFT}
+  - '1'
+  - '2'
+  - '3'
+  - '%'
+  - SPACE
+  - {t: ▽, type: trans}
+  - Ctl+LEFT
+  - LEFT
+  - DOWN
+  - RIGHT
+  - Ctl+RIGHT
+  - {t: ',', h: LCTRL}
+  - {t: ',', h: LEFT WIN}
+  - {t: ., h: LEFT ALT}
+  - {t: ▽, type: trans}
+  - ENTER
+  - {t: ▽, type: trans}
+  - DELETE
+  - {type: held}
+  - {t: ▽, type: trans}
+  Functions & Symbols:
+  - '&alt_tab'
+  - F1
+  - F2
+  - F3
+  - '&td_alt_f4'
+  - '@'
+  - '{'
+  - '}'
+  - '"'
+  - '&td_colon'
+  - '&ctrl_tab'
+  - F6
+  - F7
+  - F8
+  - F5
+  - {t: ▽, type: trans}
+  - $
+  - '#'
+  - (
+  - )
+  - ''''
+  - '~'
+  - {t: ▽, type: trans}
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - \
+  - '&'
+  - '['
+  - ']'
+  - '`'
+  - '|'
+  - LCTRL
+  - LEFT WIN
+  - LEFT ALT
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - <
+  - '>'
+  - $
+  Navigations:
+  - '&alt_tab'
+  - Ctl+Gui+LEFT
+  - Gui+TAB
+  - Gui+Ctl+RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+W
+  - Sft+Ctl+T
+  - Ctl+T
+  - '&alt_tab'
+  - '&ctrl_tab'
+  - Gui+Sft+LEFT ARROW
+  - Gui+UP ARROW
+  - Gui+Sft+RIGHT ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - '&kp_exit_AML LC(PAGE_UP)'
+  - '&kp_exit_AML LA(UP_ARROW)'
+  - Ctl+PAGE DOWN
+  - '&ctrl_tab'
+  - Alt+Ctl+Gui+DOWN
+  - Gui+LEFT ARROW
+  - Gui+DOWN
+  - Gui+RIGHT ARROW
+  - {t: Alt+PRINTSCREEN, s: Alt+PRINTSCREEN}
+  - '&screensot_save'
+  - '&kp_exit_AML C_VOLUME_DOWN'
+  - MUTE
+  - Alt+LEFT
+  - Alt+DOWN
+  - Alt+RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - DELETE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Alt+Tab:
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Ctrl+Tab:
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+TAB
+  - TAB
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - TAB
+  - Sft+TAB
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Mouse:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp MB1'
+  - {t: '&td_rclick_close_tab', h: '&mouse_gesture'}
+  - '&kp_exit_AML L'
+  - Extra Functions
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Media:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PREV
+  - PLAY PAUSE
+  - NEXT
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOLUME DOWN
+  - MUTE
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Meh+M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Extra Functions:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F13
+  - F14
+  - F15
+  - F16
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F17
+  - F18
+  - F19
+  - F20
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F21
+  - F22
+  - F23
+  - F24
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Configuration:
+  - {t: Reset/Boot, s: Central}
+  - ''
+  - ''
+  - Ctrl/Cmd
+  - US/JIS
+  - Link
+  - Batt
+  - ''
+  - {t: USB/BLE, s: Output}
+  - {t: Reset/Boot, s: Central}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - BT Clear
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT 5
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - {t: BLE, s: Mode}
+  - {t: 2.4GHz, s: Mode}
+  - {t: BLE 2.4, s: Toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT Clear All
+combos:
+- p: [0, 1]
+  k: '='
+  l: [Numpad & Arrows]
+- p: [10, 11]
+  k: ^
+  l: [Numpad & Arrows]
+- p: [18, 19]
+  k: '&mkp MCLK'
+  l: [Mouse]
+- p: [19, 20]
+  k: '&mkp_with_mod LEFT_SHIFT MCLK'
+  l: [Mouse]
+- p: [0, 1]
+  k: ESCAPE
+  l: [Default]
+- p: [22, 33]
+  k: '&caps_word'
+  l: [Default]
+- p: [33, 32]
+  k: \
+  l: [Default]
+- p: [10, 11]
+  k: Ctl+A
+  l: [Default]
+- p: [23, 22]
+  k: Ctl+Z
+  l: [Default]

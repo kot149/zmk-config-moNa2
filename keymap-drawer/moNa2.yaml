@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: moNa2}
 layers:
-  '0':
+  Default:
   - {t: Q, h: LWIN}
   - {t: W, h: LALT}
   - E
@@ -10,7 +10,7 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: '8'}
+  - {t: P, h: Media}
   - {t: A, h: LCTRL}
   - S
   - D
@@ -22,14 +22,14 @@ layers:
   - J
   - '&mouse_gesture_kp 0 K'
   - L
-  - {t: '-', h: '9'}
+  - {t: '-', h: Extra Functions}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
   - {t: X, h: LEFT SHIFT}
   - C
   - V
   - B
-  - '10'
-  - {t: '&zoom_out', h: '&mo_exit_AML 10'}
+  - Configuration
+  - {t: '&zoom_out', h: Configuration}
   - N
   - M
   - {t: ',', s: '!'}
@@ -38,57 +38,13 @@ layers:
   - LCTRL
   - LEFT WIN
   - LEFT ALT
-  - '&eager_tap_dance LANGUAGE_2 1'
-  - {t: SPACE, h: '&mo_exit_alttab 3'}
-  - {t: TAB, h: '&mo_exit_alttab 4'}
-  - {t: BACKSPACE, h: '&mo_exit_alttab 4'}
-  - {t: ENTER, h: '&mo_exit_alttab 2'}
-  - {t: ESCAPE, h: '9'}
-  '1':
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&eager_tap_dance LANG1 1'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  '2':
+  - '&ime_switch'
+  - {t: SPACE, h: Functions & Symbols}
+  - {t: TAB, h: Navigations}
+  - {t: BACKSPACE, h: Navigations}
+  - {t: ENTER, h: Numpad & Arrows}
+  - {t: ESCAPE, h: Extra Functions}
+  Numpad & Arrows:
   - +
   - '7'
   - '8'
@@ -98,8 +54,8 @@ layers:
   - Ctl+HOME
   - {t: ▽, type: trans}
   - Ctl+END
-  - '&to_kp 5 TAB'
-  - {t: '*', h: LEFT CONTROL}
+  - '&alt_tab'
+  - {t: '*', h: LCTRL}
   - '4'
   - '5'
   - '6'
@@ -110,7 +66,7 @@ layers:
   - HOME
   - UP ARROW
   - END
-  - '&to_kp 6 TAB'
+  - '&ctrl_tab'
   - {t: '0', h: LEFT SHIFT}
   - '1'
   - '2'
@@ -130,10 +86,10 @@ layers:
   - ENTER
   - {t: ▽, type: trans}
   - DELETE
+  - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  '3':
-  - '&to_kp 5 TAB'
+  Functions & Symbols:
+  - '&alt_tab'
   - F1
   - F2
   - F3
@@ -143,7 +99,7 @@ layers:
   - '}'
   - '"'
   - '&td_colon'
-  - '&to_kp 6 TAB'
+  - '&ctrl_tab'
   - F6
   - F7
   - F8
@@ -171,34 +127,34 @@ layers:
   - LEFT WIN
   - LEFT ALT
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - <
   - '>'
   - $
-  '4':
-  - '&to_kp 5 TAB'
+  Navigations:
+  - '&alt_tab'
   - Ctl+Gui+LEFT
   - Gui+TAB
   - Gui+Ctl+RIGHT
-  - '&td_alt_f4'
-  - '&td_alt_f4'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Ctl+W
   - Sft+Ctl+T
   - Ctl+T
-  - '&to_kp 5 TAB'
-  - '&to_kp 6 TAB'
+  - '&alt_tab'
+  - '&ctrl_tab'
   - Gui+Sft+LEFT ARROW
   - Gui+UP ARROW
   - Gui+Sft+RIGHT ARROW
-  - F5
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - VOLUME UP
-  - F5
+  - {t: ▽, type: trans}
   - '&kp_exit_AML LC(PAGE_UP)'
-  - '&kp_exit_AML UP_ARROW'
+  - '&kp_exit_AML LA(UP_ARROW)'
   - Ctl+PAGE DOWN
-  - '&to_kp 6 TAB'
+  - '&ctrl_tab'
   - Alt+Ctl+Gui+DOWN
   - Gui+LEFT ARROW
   - Gui+DOWN
@@ -208,7 +164,7 @@ layers:
   - '&kp_exit_AML C_VOLUME_DOWN'
   - MUTE
   - Alt+LEFT
-  - DOWN
+  - Alt+DOWN
   - Alt+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -216,11 +172,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - DELETE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '5':
+  Alt+Tab:
   - TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -264,7 +220,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '6':
+  Ctrl+Tab:
   - Sft+TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -308,7 +264,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '7':
+  Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -329,8 +285,8 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp MB1'
   - {t: '&td_rclick_close_tab', h: '&mouse_gesture'}
-  - ''
-  - '9'
+  - '&kp_exit_AML L'
+  - Extra Functions
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -352,7 +308,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '8':
+  Media:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -396,7 +352,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '9':
+  Extra Functions:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -434,42 +390,45 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&eager_tap_dance LANGUAGE_1 9'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '10':
-  - {t: '&td_reset', h: '&bootloader'}
-  - ''
-  - ''
-  - ''
-  - '&tog_ls'
-  - '&ind_con'
-  - '&ind_bat'
-  - ''
-  - OUT TOG
-  - {t: '&td_reset', h: '&bootloader'}
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&tog_ls_on'
   - {t: ▽, type: trans}
-  - '&td_bt_clear'
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  Configuration:
+  - {t: Reset/Boot, s: Central}
+  - ''
+  - ''
+  - Ctrl/Cmd
+  - US/JIS
+  - Link
+  - Batt
+  - ''
+  - {t: USB/BLE, s: Output}
+  - {t: Reset/Boot, s: Central}
   - ''
   - ''
   - ''
   - ''
-  - '&tog_ls_off'
+  - ''
+  - {t: ▽, type: trans}
+  - BT Clear
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT 5
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {type: held}
   - ''
+  - {t: BLE, s: Mode}
+  - {t: 2.4GHz, s: Mode}
+  - {t: BLE 2.4, s: Toggle}
   - ''
   - ''
   - ''
@@ -480,35 +439,32 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - '&td_bt_clear_all'
+  - BT Clear All
 combos:
 - p: [0, 1]
   k: '='
-  l: ['2']
+  l: [Numpad & Arrows]
 - p: [10, 11]
   k: ^
-  l: ['2']
+  l: [Numpad & Arrows]
 - p: [18, 19]
   k: '&mkp MCLK'
-  l: ['7']
+  l: [Mouse]
 - p: [19, 20]
   k: '&mkp_with_mod LEFT_SHIFT MCLK'
-  l: ['7']
+  l: [Mouse]
 - p: [0, 1]
   k: ESCAPE
-  l: ['0']
+  l: [Default]
 - p: [22, 33]
   k: '&caps_word'
-  l: ['0']
+  l: [Default]
 - p: [33, 32]
   k: \
-  l: ['0']
+  l: [Default]
 - p: [10, 11]
   k: Ctl+A
-  l: ['0']
+  l: [Default]
 - p: [23, 22]
   k: Ctl+Z
-  l: ['0']
+  l: [Default]

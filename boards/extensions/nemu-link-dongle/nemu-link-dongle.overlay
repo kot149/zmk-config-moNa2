@@ -1,0 +1,38 @@
+#include "../../shields/moNa2/moNa2-layouts.dtsi"
+#include "../../../config/nemu-link.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &mona2_physical_layout;
+    };
+
+    left_encoder: encoder_left {
+        status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <10>;
+    };
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_input_split: trackball_input_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_input_split>;
+        status = "okay";
+    };
+};
